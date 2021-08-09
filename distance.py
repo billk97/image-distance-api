@@ -22,7 +22,6 @@ def distance_to_camera(knownWidth, focalLength, perWidth):
 def calculate_distance():
 	trainImage = "upload/450cm-1-60-ab.jpg"
 	image = cv2.imread(trainImage)
-	# print('dimantions: ', image.shape)
 	trainImagePixel = image.shape[0]
 	marker = find_marker(image)
 	focalLength = (marker[1][0] * KNOWN_DISTANCE_IN_CM) / KNOWN_WIDTH_IN_CM
@@ -36,7 +35,7 @@ def calculate_distance():
 			continue
 		marker = find_marker(image)
 		meters = distance_to_camera(KNOWN_WIDTH_IN_CM, focalLength, marker[1][0])
-		#print('dimantions: ', image.shape)
+		# print('dimantions: ', image.shape)
 		# print(imagePath, 'dist in cm: ', round(meters, 0), " : " ,image.shape)
 		list_of_distances.append(round(meters, 0))
 	return list_of_distances
