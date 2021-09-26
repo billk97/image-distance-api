@@ -4,8 +4,8 @@ import imutils
 import cv2
 import os
 
-KNOWN_DISTANCE_IN_CM = 450
-KNOWN_WIDTH_IN_CM = 60
+KNOWN_DISTANCE_IN_CM = 200
+KNOWN_WIDTH_IN_CM = 30
 
 def find_marker(image):
 	gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
@@ -20,7 +20,7 @@ def distance_to_camera(knownWidth, focalLength, perWidth):
 	return (knownWidth * focalLength) / perWidth
 
 def calculate_distance():
-	trainImage = "upload/450cm-1-60-ab.jpg"
+	trainImage = "upload/200cm-1-30.jpg"
 	image = cv2.imread(trainImage)
 	trainImagePixel = image.shape[0]
 	marker = find_marker(image)
