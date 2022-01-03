@@ -26,8 +26,10 @@ def calculate_distance():
 	marker = find_marker(image)
 	focalLength = (marker[1][0] * KNOWN_DISTANCE_IN_CM) / KNOWN_WIDTH_IN_CM
 	list_of_distances = []
-
+	i = 0
 	for imagePath in sorted(paths.list_images("upload")):
+		print(i)
+		i = i +1
 		image = cv2.imread(imagePath)
 		if imagePath == trainImage:
 			continue
