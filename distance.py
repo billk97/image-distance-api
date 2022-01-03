@@ -20,7 +20,7 @@ def distance_to_camera(knownWidth, focalLength, perWidth):
 	return (knownWidth * focalLength) / perWidth
 
 def calculate_distance():
-	trainImage = "upload/200cm-1-30.jpg"
+	trainImage = "upload/200cm-2-30.jpg"
 	image = cv2.imread(trainImage)
 	trainImagePixel = image.shape[0]
 	marker = find_marker(image)
