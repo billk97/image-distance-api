@@ -14,7 +14,8 @@ def index():
     file.save(os.path.join(app.config['UPLOAD_PATH'],  secure_filename(file.filename)))
     file_path = app.config['UPLOAD_PATH'] + '/' + file.filename
     distances = calculate_distance()
-    print(distances[0])
-    distance_in_cm = json.dumps({"distance": distances[0]})
     os.remove(file_path)
+    if len(distances) < 1 :
+        return json.dumps({"distance": 0})
+    distance_in_cm = json.dumps({"distance": distances[0]})
     return distance_in_cm

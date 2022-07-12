@@ -4,7 +4,7 @@ import imutils
 import cv2
 import os
 
-KNOWN_DISTANCE_IN_CM = 200
+KNOWN_DISTANCE_IN_CM = 150
 KNOWN_WIDTH_IN_CM = 30
 
 def find_marker(image):
