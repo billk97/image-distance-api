@@ -16,6 +16,9 @@ def index():
     distances = calculate_distance()
     os.remove(file_path)
     if len(distances) < 1 :
+        print("not-found")
         return json.dumps({"distance": 0})
+
+    print("found")
     distance_in_cm = json.dumps({"distance": distances[0]})
     return distance_in_cm
